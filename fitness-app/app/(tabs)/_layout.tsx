@@ -1,16 +1,12 @@
-import React from "react";
-
-import { useColorScheme } from "@/hooks/useColorScheme";
-import { Stack } from "expo-router";
+import { TabBar } from "@/components/TabBar";
+import { Tabs } from "expo-router";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    />
+    <Tabs tabBar={(props) => <TabBar {...props} />}>
+      <Tabs.Screen name="index" options={{ title: "Home" }} />
+      <Tabs.Screen name="explore" options={{ title: "Explore" }} />
+      <Tabs.Screen name="profile" options={{ title: "Profile" }} />
+    </Tabs>
   );
 }
