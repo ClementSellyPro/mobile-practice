@@ -2,7 +2,7 @@ import { StyleSheet, Text } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function UserScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Profile Screen</Text>

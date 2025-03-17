@@ -1,67 +1,25 @@
 import { View, Platform, StyleSheet, Image } from "react-native";
 import { useLinkBuilder, useTheme } from "@react-navigation/native";
 import { Text, PlatformPressable } from "@react-navigation/elements";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Shadows } from "@/constants/Shadows";
-
-type iconsProps = {
-  home: (props: any) => React.JSX.Element;
-  message: (props: any) => React.JSX.Element;
-  calendar: (props: any) => React.JSX.Element;
-  user: (props: any) => React.JSX.Element;
-};
-
-type imagesProps = {
-  home: string;
-  message: string;
-  calendar: string;
-  user: string;
-};
+import { useThemeColor } from "@/hooks/useThemeColor";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
-  const { colors } = useTheme();
+  const colors = useThemeColor();
   const { buildHref } = useLinkBuilder();
 
-  // const icons:iconsProps = {
-  //   home: (props: any) => (
-  //     <Image
-  //       source={require("@/assets/images/icon/home.png")}
-  //       style={styles.images}
-  //       {...props}
-  //     />
-  //   ),
-  //   message: (props: any) => (
-  //     <Image
-  //       source={require("@/assets/images/icon/message.png")}
-  //       style={styles.images}
-  //       {...props}
-  //     />
-  //   ),
-  //   calendar: (props: any) => (
-  //     <Image
-  //       source={require("@/assets/images/icon/calendar.png")}
-  //       style={styles.images}
-  //       {...props}
-  //     />
-  //   ),
-  //   user: (props: any) => (
-  //     <Image
-  //       source={require("@/assets/images/icon/user.png")}
-  //       style={styles.images}
-  //       {...props}
-  //     />
-  //   ),
-  // };
-  const images: imagesProps = {
-    home: "@/assets/images/icon/home.png",
-    message: "@/assets/images/icon/message.png",
-    calendar: "@/assets/images/icon/calendar.png",
-    user: "@/assets/images/icon/user.png",
-  };
+  const imagesURL = {
+    index: require("@/assets/images/icon/home.png"),
+    message: require("@/assets/images/icon/message.png"),
+    calendar: require("@/assets/images/icon/calendar.png"),
+    user: require("@/assets/images/icon/user.png"),
+  } as const;
+
+  type ImageKey = keyof typeof imagesURL;
 
   return (
-    <View style={styles.tabBar}>
+    <View style={[styles.tabBar, { backgroundColor: colors.darkGreen }]}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -92,6 +50,8 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
           });
         };
 
+        const iconName = route.name as ImageKey;
+
         return (
           <PlatformPressable
             key={route.name}
@@ -103,15 +63,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             onLongPress={onLongPress}
             style={[styles.tabBarItem, {}]}
           >
-            {
-              <Image
-                source={require(images[route.name])}
-                style={styles.images}
-              />
-            }
-            <Text style={{ color: isFocused ? colors.primary : colors.text }}>
-              {label}
-            </Text>
+            {<Image source={imagesURL[iconName]} style={styles.images} />}
           </PlatformPressable>
         );
       })}
@@ -127,8 +79,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#fff",
-    marginHorizontal: 50,
-    paddingVertical: 15,
+    marginHorizontal: 40,
+    paddingVertical: 25,
     borderRadius: 40,
     ...Shadows.dp2,
   },
