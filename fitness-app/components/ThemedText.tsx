@@ -6,11 +6,7 @@ const styles = StyleSheet.create({
   default: {
     fontSize: 16,
     lineHeight: 24,
-  },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "600",
+    fontWeight: "500",
   },
   title: {
     fontSize: 32,
@@ -34,7 +30,7 @@ const styles = StyleSheet.create({
 
 type ThemedTextProps = TextProps & {
   variant?: keyof typeof styles;
-  color?: keyof (typeof Colors)[keyof typeof Colors];
+  color?: keyof (typeof Colors)["light"];
 };
 
 export function ThemedText({
