@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { TodayWorkout } from "@/components/TodayWorkout";
 import { WorkoutProgress } from "@/components/WorkoutProgress";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { StyleSheet, Text } from "react-native";
@@ -13,7 +14,10 @@ export default function HomeScreen() {
       style={[styles.container, { backgroundColor: colors.background }]}
     >
       <Header />
+
       <WorkoutProgress />
+
+      <TodayWorkout />
     </SafeAreaView>
   );
 }

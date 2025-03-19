@@ -3,6 +3,7 @@ const tint = "#c7ed42";
 export const Colors = {
   light: {
     text: "#070707",
+    textWhite: "#fff",
     textGray: "#888888",
     darkGreen: "#242c00",
     lightGreen: "#e9ffec",
@@ -15,6 +16,7 @@ export const Colors = {
   },
   dark: {
     text: "#fff",
+    textWhite: "#fff",
     textGray: "#888888",
     darkGreen: "#242c00",
     lightGreen: "#e9ffec",
