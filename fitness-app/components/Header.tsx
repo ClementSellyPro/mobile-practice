@@ -16,7 +16,7 @@ export function Header() {
         {/* info text */}
         <View style={styles.info}>
           <ThemedText color={"textGray"}>Good Morning</ThemedText>
-          <ThemedText>William</ThemedText>
+          <ThemedText>John</ThemedText>
         </View>
       </View>
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   notifIcon: {
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
   },
 });

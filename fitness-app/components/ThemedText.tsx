@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   title: {
-    fontSize: 32,
-    fontWeight: "bold",
+    fontSize: 24,
+    fontWeight: "600",
     lineHeight: 32,
   },
   header: {
