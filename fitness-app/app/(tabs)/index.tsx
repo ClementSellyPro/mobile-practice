@@ -1,8 +1,9 @@
 import { Header } from "@/components/Header";
+import { PopularExercise } from "@/components/PopularExercise";
 import { TodayWorkout } from "@/components/TodayWorkout";
 import { WorkoutProgress } from "@/components/WorkoutProgress";
 import { useThemeColor } from "@/hooks/useThemeColor";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -18,6 +19,8 @@ export default function HomeScreen() {
       <WorkoutProgress />
 
       <TodayWorkout />
+
+      <PopularExercise />
     </SafeAreaView>
   );
 }
