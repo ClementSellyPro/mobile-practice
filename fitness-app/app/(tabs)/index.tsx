@@ -3,7 +3,7 @@ import { PopularExercise } from "@/components/PopularExercise";
 import { TodayWorkout } from "@/components/TodayWorkout";
 import { WorkoutProgress } from "@/components/WorkoutProgress";
 import { useThemeColor } from "@/hooks/useThemeColor";
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -14,13 +14,15 @@ export default function HomeScreen() {
     <SafeAreaView
       style={[styles.container, { backgroundColor: colors.background }]}
     >
-      <Header />
+      <ScrollView style={styles.innerContainer}>
+        <Header />
 
-      <WorkoutProgress />
+        <WorkoutProgress />
 
-      <TodayWorkout />
+        <TodayWorkout />
 
-      <PopularExercise />
+        <PopularExercise />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -28,8 +30,10 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    gap: 20,
     paddingHorizontal: 15,
     paddingVertical: 25,
+  },
+  innerContainer: {
+    gap: 20,
   },
 });
