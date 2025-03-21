@@ -2,11 +2,13 @@ import { useThemeColor } from "@/hooks/useThemeColor";
 import {
   Image,
   ImageSourcePropType,
+  Pressable,
   StyleSheet,
   Text,
   View,
 } from "react-native";
 import { ThemedText } from "./ThemedText";
+import { useRouter } from "expo-router";
 
 type exoCardType = {
   title: string;
@@ -24,9 +26,13 @@ export function ExerciseCard({
   time,
 }: exoCardType) {
   const colors = useThemeColor();
+  const router = useRouter();
 
   return (
-    <View style={[styles.container, { backgroundColor: color }]}>
+    <Pressable
+      onPress={() => router.push("../ExerciseDetail")}
+      style={[styles.container, { backgroundColor: color }]}
+    >
       <Image style={styles.icon} source={icon} />
 
       <ThemedText variant="subtitle">{title}</ThemedText>
@@ -42,7 +48,7 @@ export function ExerciseCard({
         />
         <Text style={styles.time}>{time} min</Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
 

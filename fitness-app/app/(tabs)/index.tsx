@@ -14,7 +14,7 @@ export default function HomeScreen() {
     <SafeAreaView
       style={[styles.container, { backgroundColor: colors.background }]}
     >
-      <ScrollView style={styles.innerContainer}>
+      <ScrollView contentContainerStyle={styles.innerContainer}>
         <Header />
 
         <WorkoutProgress />
