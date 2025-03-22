@@ -16,6 +16,7 @@ type exoCardType = {
   color: string;
   numberWorkout: string;
   time: string;
+  description: string;
 };
 
 export function ExerciseCard({
@@ -24,13 +25,24 @@ export function ExerciseCard({
   color,
   numberWorkout,
   time,
+  description,
 }: exoCardType) {
   const colors = useThemeColor();
   const router = useRouter();
 
   return (
     <Pressable
-      onPress={() => router.push("../ExerciseDetail")}
+      onPress={() =>
+        router.push({
+          pathname: "../ExerciseDetail",
+          params: {
+            title: title,
+            numberWorkout: numberWorkout,
+            time: time,
+            description: description,
+          },
+        })
+      }
       style={[styles.container, { backgroundColor: color }]}
     >
       <Image style={styles.icon} source={icon} />

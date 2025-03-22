@@ -1,11 +1,11 @@
 import { ThemedText } from "@/components/ThemedText";
 import { useThemeColor } from "@/hooks/useThemeColor";
-import { useRouter } from "expo-router";
-import { Button, Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { useLocalSearchParams } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function ExerciseDetail() {
-  const router = useRouter();
   const colors = useThemeColor();
+  const { title, numberWorkout, time, description } = useLocalSearchParams();
 
   function detailsPress() {}
 
@@ -15,15 +15,14 @@ export default function ExerciseDetail() {
     <View style={styles.container}>
       <View style={styles.illustration}></View>
 
-      <Text style={styles.numberWorkout}>16 Workout</Text>
+      <Text style={styles.numberWorkout}>{numberWorkout} Workout</Text>
 
       {/* Title and description */}
       <ThemedText variant="title" style={styles.title}>
-        Free hand exerises
+        {title}
       </ThemedText>
       <Text style={[styles.description, { color: colors.textGray }]}>
-        This free-hand workout is designed to improve your core strength,
-        flexibility, and overall endurance.
+        {description}
       </Text>
 
       {/* Details, time and cal */}
@@ -33,7 +32,7 @@ export default function ExerciseDetail() {
             style={styles.images}
             source={require("@/assets/images/icon/dumbbell.png")}
           />
-          <Text style={styles.detailText}>90 min</Text>
+          <Text style={styles.detailText}>{time} min</Text>
         </View>
 
         <View style={styles.detailsItem}>

@@ -17,6 +17,7 @@ type ExerciceType = {
   title: string;
   numberWorkout: string;
   time: string;
+  description: string;
 };
 
 const exerciseData: ExerciceType[] = [
@@ -27,6 +28,8 @@ const exerciseData: ExerciceType[] = [
     title: "Dumbbell Workout",
     numberWorkout: "12",
     time: "120",
+    description:
+      "This bumbbell workout is designed to improve your core strength, flexibility, and overall endurance.",
   },
   {
     id: 1298371473,
@@ -35,6 +38,8 @@ const exerciseData: ExerciceType[] = [
     title: "Free hand exercises",
     numberWorkout: "16",
     time: "90",
+    description:
+      "This free-hand workout is designed to improve your core strength, flexibility, and overall endurance.",
   },
   {
     id: 84324,
@@ -43,6 +48,8 @@ const exerciseData: ExerciceType[] = [
     title: "Yoga",
     numberWorkout: "18",
     time: "100",
+    description:
+      "This yoga exercise is designed to improve your core strength, flexibility, and overall endurance.",
   },
 ];
 
@@ -71,6 +78,7 @@ export function PopularExercise() {
               color={item.color}
               time={item.time}
               numberWorkout={item.numberWorkout}
+              description={item.description}
             />
           )}
           ItemSeparatorComponent={() => <View style={{ width: 15 }} />}
