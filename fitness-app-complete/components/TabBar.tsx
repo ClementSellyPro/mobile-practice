@@ -4,25 +4,30 @@ import { PlatformPressable } from "@react-navigation/elements";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useThemeColors } from "@/hook/useThemeColors";
 
+import HomeIcon from "@/assets/images/icons/home.svg";
+import ResourcesIcon from "@/assets/images/icons/resources.svg";
+import StarIcon from "@/assets/images/icons/star.svg";
+import SupportIcon from "@/assets/images/icons/support.svg";
+
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const colors = useThemeColors();
 
   const { buildHref } = useLinkBuilder();
 
-  const imagesURL = {
-    index: require("@/assets/images/icons/home.png"),
-    resources: require("@/assets/images/icons/resources.png"),
-    favorites: require("@/assets/images/icons/stars.png"),
-    support: require("@/assets/images/icons/support.png"),
+  const icons = {
+    index: <HomeIcon width={24} height={24} />,
+    resources: <ResourcesIcon width={24} height={24} />,
+    favorites: <StarIcon width={24} height={24} />,
+    support: <SupportIcon width={24} height={24} />,
   } as const;
-  const imagesURL_selected = {
-    index: require("@/assets/images/icons/home.png"),
-    resources: require("@/assets/images/icons/resources.png"),
-    favorites: require("@/assets/images/icons/stars.png"),
-    support: require("@/assets/images/icons/support.png"),
-  } as const;
+  // const imagesURL_selected = {
+  //   index: require("@/assets/images/icons/home.svg"),
+  //   resources: require("@/assets/images/icons/resources.svg"),
+  //   favorites: require("@/assets/images/icons/star.svg"),
+  //   support: require("@/assets/images/icons/support.svg"),
+  // } as const;
 
-  type ImageKey = keyof typeof imagesURL;
+  type ImageKey = keyof typeof icons;
 
   return (
     <View style={[styles.tabBar, { backgroundColor: colors.purpleLight }]}>
@@ -63,23 +68,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
             onLongPress={onLongPress}
             style={[styles.tabBarItem]}
           >
-            <View
-              style={[
-                styles.selectedItem,
-                isFocused ? { backgroundColor: colors.purpleLight } : "",
-              ]}
-            >
-              {
-                <Image
-                  source={
-                    isFocused
-                      ? imagesURL_selected[iconName]
-                      : imagesURL[iconName]
-                  }
-                  style={styles.images}
-                />
-              }
-            </View>
+            <View style={[styles.selectedItem, ,]}>{icons[iconName]}</View>
           </PlatformPressable>
         );
       })}
@@ -89,6 +78,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
 const styles = StyleSheet.create({
   tabBar: {
+    flex: 1,
     position: "absolute",
     bottom: 0,
     flexDirection: "row",

@@ -1,6 +1,10 @@
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 
+import SearchIcon from "@/assets/images/icons/search.svg";
+import NotificationIcon from "@/assets/images/icons/notification.svg";
+import UserIcon from "@/assets/images/icons/user.svg";
+
 export function Header() {
   return (
     <View style={styles.container}>
@@ -13,13 +17,13 @@ export function Header() {
 
       <View style={styles.iconsGroup}>
         <Pressable>
-          <Image source={require("@/assets/images/icons/search.png")} />
+          <SearchIcon width={20} height={20} />
         </Pressable>
         <Pressable>
-          <Image source={require("@/assets/images/icons/notifications.png")} />
+          <NotificationIcon width={20} height={20} />
         </Pressable>
         <Pressable>
-          <Image source={require("@/assets/images/icons/user.png")} />
+          <UserIcon width={20} height={20} />
         </Pressable>
       </View>
     </View>
