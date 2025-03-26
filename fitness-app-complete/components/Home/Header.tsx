@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 
 import SearchIcon from "@/assets/images/icons/search.svg";
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginBottom: 25,
   },
   iconsGroup: {
     flexDirection: "row",

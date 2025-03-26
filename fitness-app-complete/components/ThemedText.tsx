@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
     fontWeight: "light",
     // fontFamily: "League",
   },
+  defaultThin: {
+    fontSize: 14,
+    fontWeight: "200",
+    // fontFamily: "League",
+  },
   tiny: {
     fontSize: 11,
     fontWeight: "200",
@@ -59,7 +64,7 @@ export function ThemedText({ variant, color, style, ...rest }: PropsType) {
     <Text
       style={[
         styles[variant ?? "default"],
-        { color: colors[color ?? "text"] },
+        { color: colors[color ?? "white"] },
         style,
       ]}
       {...rest}

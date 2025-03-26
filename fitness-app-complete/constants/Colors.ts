@@ -1,6 +1,6 @@
 export const Colors = {
   light: {
-    text: "#FFFFFF",
+    white: "#FFFFFF",
     green: "#E2F163",
     purple: "#896CFE",
     purpleLight: "#B3A0FF",
@@ -8,7 +8,7 @@ export const Colors = {
   },
 
   dark: {
-    text: "#FFFFFF",
+    white: "#FFFFFF",
     green: "#E2F163",
     purple: "#896CFE",
     purpleLight: "#B3A0FF",

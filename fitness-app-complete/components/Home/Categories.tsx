@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginVertical: 30,
+    marginBottom: 10,
   },
 });
