@@ -1,3 +1,4 @@
+import { Categories } from "@/components/Home/Categories";
 import { Header } from "@/components/Home/Header";
 import { RootView } from "@/components/RootView";
 import { useThemeColors } from "@/hook/useThemeColors";
@@ -9,6 +10,7 @@ export default function Index() {
   return (
     <RootView>
       <Header />
+      <Categories />
     </RootView>
   );
 }

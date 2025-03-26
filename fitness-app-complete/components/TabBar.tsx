@@ -20,12 +20,6 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     favorites: <StarIcon width={24} height={24} />,
     support: <SupportIcon width={24} height={24} />,
   } as const;
-  // const imagesURL_selected = {
-  //   index: require("@/assets/images/icons/home.svg"),
-  //   resources: require("@/assets/images/icons/resources.svg"),
-  //   favorites: require("@/assets/images/icons/star.svg"),
-  //   support: require("@/assets/images/icons/support.svg"),
-  // } as const;
 
   type ImageKey = keyof typeof icons;
 

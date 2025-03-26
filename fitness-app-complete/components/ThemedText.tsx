@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
     fontWeight: "light",
     // fontFamily: "League",
   },
+  tiny: {
+    fontSize: 11,
+    fontWeight: "200",
+    // fontFamily: "League",
+  },
   title: {
     fontSize: 24,
     fontWeight: "bold",
