@@ -38,7 +38,7 @@ export function RecommendationItem({
         <StarIcon
           width={15}
           height={15}
-          fill={isFavorite ? colors.green : colors.white}
+          // fill={isFavorite ? colors.green : colors.white}
         />
       </Pressable>
       <Image style={styles.image} source={imageURL[image]} />

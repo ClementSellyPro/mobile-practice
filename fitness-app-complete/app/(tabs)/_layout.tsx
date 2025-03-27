@@ -3,11 +3,14 @@ import { Tabs } from "expo-router";
 
 export default function TabLayout() {
   return (
-    <Tabs tabBar={(props) => <TabBar {...props} />}>
-      <Tabs.Screen name="index" options={{ headerShown: false }} />
-      <Tabs.Screen name="resources" options={{ headerShown: false }} />
-      <Tabs.Screen name="favorites" options={{ headerShown: false }} />
-      <Tabs.Screen name="support" options={{ headerShown: false }} />
+    <Tabs
+      screenOptions={{ headerShown: false }}
+      tabBar={(props) => <TabBar {...props} />}
+    >
+      <Tabs.Screen name="index" />
+      <Tabs.Screen name="resources" />
+      <Tabs.Screen name="favorites" />
+      <Tabs.Screen name="support" />
     </Tabs>
   );
 }

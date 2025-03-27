@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 
-import Arrow from "@/assets/images/icons/arrowFilled.svg";
+import Arrow from "@/assets/images/icons/arrow-right.svg";
 import { RecommendationItem } from "./RecommendationItem";
 
 export function Recommendations() {

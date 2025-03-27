@@ -1,11 +1,14 @@
-import { Pressable, StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 
 import SearchIcon from "@/assets/images/icons/search.svg";
 import NotificationIcon from "@/assets/images/icons/notification.svg";
 import UserIcon from "@/assets/images/icons/user.svg";
+import { useRouter } from "expo-router";
 
 export function Header() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <View>
@@ -16,15 +19,15 @@ export function Header() {
       </View>
 
       <View style={styles.iconsGroup}>
-        <Pressable>
+        <TouchableOpacity>
           <SearchIcon width={20} height={20} />
-        </Pressable>
-        <Pressable>
+        </TouchableOpacity>
+        <TouchableOpacity>
           <NotificationIcon width={20} height={20} />
-        </Pressable>
-        <Pressable>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/profile")}>
           <UserIcon width={20} height={20} />
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </View>
   );
