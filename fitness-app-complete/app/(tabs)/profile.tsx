@@ -7,19 +7,21 @@ import { IconList } from "@/components/Profile/ProfileItem";
 
 import { BackButton } from "@/components/UI/BackButton";
 import { ProfileItem } from "@/components/Profile/ProfileItem";
+import { RelativePathString } from "expo-router";
 
 type listType = {
   icon: keyof typeof IconList;
   name: string;
+  path: RelativePathString;
 };
 
 const profileItemList: listType[] = [
-  { icon: "profile", name: "Profile" },
-  { icon: "favorite", name: "Favorites" },
-  { icon: "privacy", name: "Privacy Policy" },
-  { icon: "setting", name: "Settings" },
-  { icon: "help", name: "Help" },
-  { icon: "logout", name: "Logout" },
+  { icon: "editprofile", name: "Profile", path: "../editprofile" },
+  { icon: "favorite", name: "Favorites", path: "../favorite" },
+  { icon: "privacy", name: "Privacy Policy", path: "../privacy" },
+  { icon: "setting", name: "Settings", path: "../settings" },
+  { icon: "help", name: "Help", path: "../help" },
+  { icon: "logout", name: "Logout", path: "../logout" },
 ];
 
 export default function profile() {
@@ -43,7 +45,12 @@ export default function profile() {
         <PersonalInfo />
         <View style={styles.profileItems}>
           {profileItemList.map((item, index) => (
-            <ProfileItem key={index} icon={item.icon} name={item.name} />
+            <ProfileItem
+              key={index}
+              icon={item.icon}
+              name={item.name}
+              path={item.path}
+            />
           ))}
         </View>
       </View>

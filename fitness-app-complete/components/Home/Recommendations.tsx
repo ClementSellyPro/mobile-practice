@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "../ThemedText";
 
 import Arrow from "@/assets/images/icons/arrow-right.svg";
@@ -13,10 +13,10 @@ export function Recommendations() {
           Recommendations
         </ThemedText>
 
-        <View style={styles.seeAll}>
+        <TouchableOpacity style={styles.seeAll}>
           <ThemedText>See All</ThemedText>
           <Arrow width={12} height={12} />
-        </View>
+        </TouchableOpacity>
       </View>
 
       {/* recommendation 'items' */}

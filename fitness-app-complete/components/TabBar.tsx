@@ -11,6 +11,7 @@ import SupportIcon from "@/assets/images/icons/support.svg";
 
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const colors = useThemeColors();
+  const routeList = state.routes.slice(0, 4);
 
   const { buildHref } = useLinkBuilder();
 
@@ -25,7 +26,7 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   return (
     <View style={[styles.tabBar, { backgroundColor: colors.purpleLight }]}>
-      {state.routes.map((route, index) => {
+      {routeList.map((route, index) => {
         const { options } = descriptors[route.key];
 
         const isFocused = state.index === index;

@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "../ThemedText";
 
 import WorkoutIcon from "@/assets/images/icons/workout.svg";
@@ -22,12 +22,12 @@ export function CategoryItem({ text, icon }: PropsType) {
   const IconComponent = iconList[icon];
 
   return (
-    <View style={styles.categoriesItem}>
+    <TouchableOpacity style={styles.categoriesItem}>
       <IconComponent width={32} height={32} />
       <ThemedText variant="tiny" color="purpleLight">
         {text}
       </ThemedText>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -9,9 +9,10 @@ import SettingIcon from "@/assets/images/icons/setting.svg";
 import SupportIcon from "@/assets/images/icons/support.svg";
 import LogoutIcon from "@/assets/images/icons/log-out.svg";
 import ArrowRight from "@/assets/images/icons/arrow-right.svg";
+import { RelativePathString, useRouter } from "expo-router";
 
 export const IconList = {
-  profile: UserIcon,
+  editprofile: UserIcon,
   favorite: StarIcon,
   privacy: PrivacyIcon,
   setting: SettingIcon,
@@ -22,14 +23,19 @@ export const IconList = {
 type PropsType = {
   icon: keyof typeof IconList;
   name: string;
+  path: RelativePathString;
 };
 
-export function ProfileItem({ icon, name }: PropsType) {
+export function ProfileItem({ icon, name, path }: PropsType) {
   const colors = useThemeColors();
   const IconComponent = IconList[icon];
+  const router = useRouter();
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => router.push(path)}
+    >
       <View style={styles.iConTextGroup}>
         <View
           style={[styles.iconContainer, { backgroundColor: colors.purple }]}
