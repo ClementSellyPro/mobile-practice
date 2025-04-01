@@ -17,7 +17,7 @@ type listType = {
 
 const profileItemList: listType[] = [
   { icon: "editprofile", name: "Profile", path: "../editprofile" },
-  { icon: "favorite", name: "Favorites", path: "../favorite" },
+  { icon: "favorite", name: "Favorites", path: "../favorites" },
   { icon: "privacy", name: "Privacy Policy", path: "../privacy" },
   { icon: "setting", name: "Settings", path: "../settings" },
   { icon: "help", name: "Help", path: "../help" },
